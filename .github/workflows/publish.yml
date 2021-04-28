@@ -2,14 +2,15 @@ name: Build and Deploy
 on: 
   push:
     branches:
-      - main
+      - addSpecificFiles
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Clone comobi-core repository
         run: |
-          git clone --depth 1 https://github.com/betagouv/comobi-core.git .
+          git clone -b addSpecificFiles --depth 1 https://github.com/betagouv/comobi-core.git .
+
       - name: Clone specific repository
         run: |
           git clone --depth 1 $GITHUB_SERVER_URL/$GITHUB_SERVER_URL specific
