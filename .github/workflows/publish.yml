@@ -13,7 +13,7 @@ jobs:
 
       - name: Clone specific repository
         run: |
-          git clone --depth 1 $GITHUB_SERVER_URL/$GITHUB_SERVER_URL specific
+          git clone --depth 1 $GITHUB_SERVER_URL/$GITHUB_REPOSITORY specific
       - name: move specific files
         run: |
           mv specific/ .
